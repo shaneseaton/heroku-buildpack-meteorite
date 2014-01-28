@@ -63,13 +63,13 @@ function package_download() {
 
 echo "-----> Resolving engine versions"
 
+requested_node_ver=""
 if [ -f "${BUILD_DIR}/package.json" ]; then
   requested_node_ver=$(cat $BUILD_DIR/package.json | $LP_DIR/vendor/jq -r .engines.node)
   echo
-  echo "Extracted node version from package.json: ${requested_node_ver}"
+  echo "Extracted node version from package.json: ${requested_node_ver}" | indent
   echo
 fi
-requested_node_ver=""
 # add a warning if no version of node specified
 if [ "${requested_node_ver}" == "" ]; then
   requested_node_ver="stable"
