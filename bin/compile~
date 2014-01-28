@@ -65,9 +65,6 @@ echo "-----> Resolving engine versions"
 
 if [ -f "${BUILD_DIR}/package.json" ]; then
   requested_node_ver=$(cat $BUILD_DIR/package.json | $LP_DIR/vendor/jq -r .engines.node)
-  echo
-  echo "Extracted node version from package.json: ${requested_node_ver}"
-  echo
 fi
 requested_node_ver=""
 # add a warning if no version of node specified
