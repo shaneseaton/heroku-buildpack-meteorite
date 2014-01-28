@@ -64,7 +64,7 @@ function package_download() {
 echo "-----> Resolving engine versions"
 
 if [ -f "${BUILD_DIR}/package.json" ]; then
-  requested_node_ver=$(cat $BUILD_DIR/package.json | $LP_DIR/vendor/jq -r .engines.node)
+  requested_node_ver=$(cat $BUILD_DIR/package.json | $LP_DIR/vendor/json engines.node)
 fi
 requested_node_ver=""
 # add a warning if no version of node specified
