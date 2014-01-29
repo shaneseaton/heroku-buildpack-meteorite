@@ -1,28 +1,5 @@
-# Heroku buildpack: Meteorite
+I found for metoer 0.7.0.1 it wouldn't work with the latest stable node package (0.10.25 at time of writting). So in order to test older versions I have fixed the compile script to use the version numbers specified in the package.json file of the application.
 
-This build pack allows you to easily deploy meteor apps to heroku using [meteorite](http://github.com/oortcloud/meteorite). It's easy to use different branches of meteor and any smart package you can lay your hands on.
+I am now using 0.10.22 with meteor(ite) 0.7.0.1 and deployment to heroku is working.
 
-## Usage
-
-```bash
-heroku create --stack cedar --buildpack https://github.com/oortcloud/heroku-buildpack-meteorite.git
-```
-
-Then `git push` to heroku as usual.
-
-## NOTES
-
-You need to set the `ROOT_URL` environment variable:
-
-```bash
-heroku config:add ROOT_URL=your.domain.com
-```
-
-You can specify meteor settings by setting the `METEOR_SETTINGS` environment variable:
-
-```bash
-heroku config:add METEOR_SETTINGS='{"herp":"derp"}'
-```
-
-
-You need to have a verified account so the buildpack can add a `mongohq:sandbox` addon.
+I am also using the free accounts with heroku and mongolab
